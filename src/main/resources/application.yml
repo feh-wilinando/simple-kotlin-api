@@ -1,0 +1,5 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost/bookstore?createDatabaseIfNotExist=true
+    username: root
+    driver-class-name: com.mysql.jdbc.Driver

@@ -1,11 +1,17 @@
 language: java
 jdk:
-  - openjdk8
+- openjdk8
 install:
-  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+- mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
 cache:
   directories:
-  - $HOME/.m2/
-
+  - "$HOME/.m2/"
 script:
-  - mvn clean package
+- mvn clean package
+deploy:
+  provider: heroku
+  app: kotlin-api
+  on:
+    branch: master
+  api_key:
+    secure: H/cZjJRJOjn13gCxD20PjZzippySUdfKRbTLXrQmOL9YEzJ0Milqeqh1DRBrrkml4HU+F+FohtdM2MqcJTK1QKDyDqlA/qQGPnywgGLDtBUOB4Yful/NVN2DJzPpWfC+7sf75wCg/oBeKZ3fzEYmC6x1gztfPgNIdeKFiW0+eH83VaHJI/tfLJzYwT5L62RsTqQNnGPmLzAuvmZNBCwjAzwtJrMv0z5ei80YNQSX060YcsL7IL1tYNrheTDSuktu5D7R97nFbWUlO5hcEYaq7Yf3whfnfHJB6XOAzPXoBlvlzQw8gwGSiw1248CxTZwq3OG/UrUs7LyWsdtzLVWB97eu+4RZZkcTcJiSU7M0rtwk9D3nag9TumiK0GvZa3mym7xJdFd4PMlT06XXb2vuOF3zgXLFhH6hrS/ryvIaXmCwsUvB1/pDbUvvcoAjAKk6Q5BsaHyKea2DkolQNghD0JDhHh7Xz5eyAsj3xSSvajjBJbTzlFlsmDPM5/mcHuvxSeBzeXn7Z2KIibqKk9KSvtywOhtq1ObhUNphdWZUWy9i0AfbC92uUulzQuqsBotKqvJYnxCs1zsnhrwqyMKbn1HcsxvMetVnuVP7HTF+chO18Z2Qa7qljBmSuS0Pn2vcoa9pOgP478ZNM0KazeMSnpHc794EYI5ypWWCLS/L2oc=

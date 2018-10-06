@@ -1,0 +1,1 @@
+web: java $JAVA_OPTS -Dprofile=production -jar target/*.jar --port $PORT
